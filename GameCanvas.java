@@ -1,6 +1,7 @@
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class GameCanvas extends Canvas implements Runnable{
     static GameCanvas spaceInvaders;
     
     public ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
+    boolean gameOver = false;
     
     public GameCanvas(){
         setBackground(Color.GRAY);
@@ -131,13 +133,24 @@ public class GameCanvas extends Canvas implements Runnable{
             Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        if(gameOver){
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 70)); 
+            if(player1.alive){
+                g.drawString("Player 1 Wins!", 200, 400);
+            }else{
+                g.drawString("Player 2 Wins!", 200, 400);
+            }
+        }
     }
     
     public void animate(){
-        player1.animate();
-        player2.animate();
-        for(int i = 0; i <= bulletList.size() - 1; i++){
-            bulletList.get(i).animate();
+        if(!gameOver){
+            player1.animate();
+            player2.animate();
+            for(int i = 0; i <= bulletList.size() - 1; i++){
+                bulletList.get(i).animate();
+            }
         }
     }
 }

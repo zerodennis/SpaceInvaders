@@ -170,6 +170,7 @@ public class Player {
                 
                 if(life < 1){
                     alive = false;
+                    GameCanvas.spaceInvaders.gameOver = true;
                 }
             }
         }
