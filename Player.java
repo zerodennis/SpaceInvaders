@@ -5,6 +5,7 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 /*
@@ -36,6 +37,11 @@ public class Player {
     boolean movingUp = false;
     boolean movingDown = false;
     
+    int life = 3;
+    boolean alive = true;
+    
+    ArrayList<Life> lifeList = new ArrayList<Life>();
+    
     public Player(int x, int y, int w, int h, int num){
         xPos = x;
         yPos = y;
@@ -43,13 +49,17 @@ public class Player {
         height = h;
         playerNum = num;
         
+        lifeList.add(new Life());
+        lifeList.add(new Life());
+        lifeList.add(new Life());
+        
     }
     
     public Rectangle getBounds(){ return new Rectangle(xPos, yPos, width , height); }
     
     public void draw(Graphics g) throws IOException{
         try{
-            img = ImageIO.read(new File("Spaceship.png"));
+            img = ImageIO.read(new File("resources/Spaceship.png"));
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -63,6 +73,20 @@ public class Player {
             img = op.filter(img, null);
             
             g.drawImage(img, xPos, yPos, width, height, null);
+        }
+        
+        
+        if(playerNum == 1){
+            int x = -5;
+            for(int i = 0; i < lifeList.size(); i++){
+                
+                lifeList.get(i).draw(g, x + (i*50), 730);
+            }
+        } else{
+            int x = 640;
+            for(int i = 0; i < lifeList.size(); i++){
+                lifeList.get(i).draw(g, x + (i*50), 0);
+            }
         }
         
         //g.drawRect(xPos, yPos, width, height);
@@ -138,6 +162,15 @@ public class Player {
             if(bullet.intersects(getBounds())){
                 //System.out.println("Hit");
                 GameCanvas.spaceInvaders.bulletList.get(i).playerHit = true;
+                
+                if(alive){
+                    lifeList.remove(lifeList.get(life - 1));
+                    life--;
+                }
+                
+                if(life < 1){
+                    alive = false;
+                }
             }
         }
     }

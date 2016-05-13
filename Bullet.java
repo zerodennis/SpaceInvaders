@@ -34,7 +34,7 @@ public class Bullet {
     
     public void draw(Graphics g) throws IOException{
         try{
-            img = ImageIO.read(new File("Bullet.png"));
+            img = ImageIO.read(new File("resources/Bullet.png"));
         }catch(IOException e){
             e.printStackTrace();
         }

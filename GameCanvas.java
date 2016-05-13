@@ -23,7 +23,7 @@ import javax.swing.WindowConstants;
 public class GameCanvas extends Canvas implements Runnable{
 
     Player player2 = new Player(0, 0, 50, 50, 2);
-    Player player1 = new Player(0, 500, 50, 50, 1);
+    Player player1 = new Player(750, 730, 50, 50, 1);
     static boolean running = true;
     private Thread gameThread;
     
@@ -42,7 +42,6 @@ public class GameCanvas extends Canvas implements Runnable{
         //if(running){
           //  return;
         //}
-        System.out.println("hi");
         running = true;
         gameThread = new Thread(this);
         gameThread.start();
@@ -116,12 +115,6 @@ public class GameCanvas extends Canvas implements Runnable{
     
     @Override
     public void paint(Graphics g){
-        try {
-            player1.draw(g);
-            player2.draw(g);
-        } catch (IOException ex) {
-            Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
         for(int i = 0; i <= bulletList.size() - 1; i++){
             try {
@@ -131,7 +124,13 @@ public class GameCanvas extends Canvas implements Runnable{
             }
         }
         
-        repaint();
+        try {
+            player1.draw(g);
+            player2.draw(g);
+        } catch (IOException ex) {
+            Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     public void animate(){
@@ -140,6 +139,5 @@ public class GameCanvas extends Canvas implements Runnable{
         for(int i = 0; i <= bulletList.size() - 1; i++){
             bulletList.get(i).animate();
         }
-        System.out.println(bulletList.size());
     }
 }
