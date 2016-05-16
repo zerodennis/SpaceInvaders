@@ -1,8 +1,5 @@
 
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -30,7 +27,7 @@ public class GameCanvas extends Canvas implements Runnable{
     
     static GameCanvas spaceInvaders;
     
-    public ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
+    public ArrayList<Bullet> bulletList = new ArrayList<>();
     boolean gameOver = false;
     
     public GameCanvas(){
@@ -114,7 +111,25 @@ public class GameCanvas extends Canvas implements Runnable{
         
         spaceInvaders.startGame();
     }
-    
+
+    public void update(Graphics g) {
+        Graphics offgc;
+        Image offscreen;
+        Dimension d = size();
+
+
+        offscreen = createImage(d.width, d.height);
+        offgc = offscreen.getGraphics();
+
+        offgc.setColor(getBackground());
+        offgc.fillRect(0, 0, d.width, d.height);
+        offgc.setColor(getForeground());
+
+        paint(offgc);
+
+        g.drawImage(offscreen, 0, 0, this);
+    }
+
     @Override
     public void paint(Graphics g){
         
