@@ -1,6 +1,8 @@
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +41,16 @@ public class Bullet {
             e.printStackTrace();
         }
         
-        g.drawImage(img, xPos, yPos, width, height, null);
+        if(direction.equals("Up")){
+            g.drawImage(img, xPos, yPos, width, height, null);
+        } else{
+            AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
+            tx.translate(0, -img.getHeight(null));
+            AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+            img = op.filter(img, null);
+            
+            g.drawImage(img, xPos, yPos, width, height, null);
+        }
         
         //g.drawRect(xPos, yPos, width, height);
         //animate();
@@ -53,7 +64,11 @@ public class Bullet {
         }
         
         if(playerHit == true || yPos > 800 || yPos < 0){
-            GameCanvas.spaceInvaders.bulletList.remove(this);
+            if(direction.equals("Up")){
+                GameCanvas.spaceInvaders.bulletList1.remove(this);
+            } else{
+                GameCanvas.spaceInvaders.bulletList2.remove(this);
+            }
         }
     }
     

@@ -64,7 +64,7 @@ public class Player {
             e.printStackTrace();
         }
         
-        if(playerNum == 1){
+        if(playerNum == 2){
             g.drawImage(img, xPos, yPos, width, height, null);
         } else{
             AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
@@ -147,30 +147,55 @@ public class Player {
     public void fire(){
         Bullet bullet;
         if(playerNum == 1){
-            bullet = new Bullet(xPos + (width/2 - 5), yPos - 10, 10, 10, "Up");            
+            bullet = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up");            
         }else{
-            bullet = new Bullet(xPos + (width/2 - 5), yPos + height + 5, 10, 10, "Down");
+            bullet = new Bullet(xPos + (width/2 - 3), yPos + height + 14, 7, 14, "Down");
         }
         
-        GameCanvas.spaceInvaders.bulletList.add(bullet);
+        if(playerNum == 1){
+            GameCanvas.spaceInvaders.bulletList1.add(bullet);
+        } else{
+            GameCanvas.spaceInvaders.bulletList2.add(bullet);
+        }
     }
     
     public void bulletCollision(){
-        for(int i = 0; i <= GameCanvas.spaceInvaders.bulletList.size() - 1; i++){
-            Rectangle bullet = GameCanvas.spaceInvaders.bulletList.get(i).getBounds();
-            
-            if(bullet.intersects(getBounds())){
-                //System.out.println("Hit");
-                GameCanvas.spaceInvaders.bulletList.get(i).playerHit = true;
-                
-                if(alive){
-                    lifeList.remove(lifeList.get(life - 1));
-                    life--;
+        if(playerNum == 1){
+            for(int i = 0; i <= GameCanvas.spaceInvaders.bulletList2.size() - 1; i++){
+                Rectangle bullet = GameCanvas.spaceInvaders.bulletList2.get(i).getBounds();
+
+                if(bullet.intersects(getBounds())){
+                    //System.out.println("Hit");
+                    GameCanvas.spaceInvaders.bulletList2.get(i).playerHit = true;
+
+                    if(alive){
+                        lifeList.remove(lifeList.get(life - 1));
+                        life--;
+                    }
+
+                    if(life < 1){
+                        alive = false;
+                        GameCanvas.spaceInvaders.gameOver = true;
+                    }
                 }
-                
-                if(life < 1){
-                    alive = false;
-                    GameCanvas.spaceInvaders.gameOver = true;
+            }
+        } else{
+            for(int i = 0; i <= GameCanvas.spaceInvaders.bulletList1.size() - 1; i++){
+                Rectangle bullet = GameCanvas.spaceInvaders.bulletList1.get(i).getBounds();
+
+                if(bullet.intersects(getBounds())){
+                    //System.out.println("Hit");
+                    GameCanvas.spaceInvaders.bulletList1.get(i).playerHit = true;
+
+                    if(alive){
+                        lifeList.remove(lifeList.get(life - 1));
+                        life--;
+                    }
+
+                    if(life < 1){
+                        alive = false;
+                        GameCanvas.spaceInvaders.gameOver = true;
+                    }
                 }
             }
         }

@@ -2,6 +2,7 @@
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -27,14 +28,25 @@ public class GameCanvas extends Canvas implements Runnable{
     
     static GameCanvas spaceInvaders;
     
-    public ArrayList<Bullet> bulletList = new ArrayList<>();
+    public ArrayList<Bullet> bulletList1 = new ArrayList<>();
+    public ArrayList<Bullet> bulletList2 = new ArrayList<>();
+    public ArrayList<Star> starList = new ArrayList<>();
     boolean gameOver = false;
     
     public GameCanvas(){
-        setBackground(Color.GRAY);
+        setBackground(Color.BLACK);
         setSize(1000, 1000);
         
         addKeyListener(new KeyEventHandler());
+        for(int i = 0; i < 15; i++){
+            int xMin = 0, xMax = 780;
+            int yMin = 0, yMax = 780;
+            Random random = new Random();
+            int randX = random.nextInt(xMax - xMin + 1) + xMin;
+            int randY = random.nextInt(yMax - yMin + 1) + yMin;
+            Star star = new Star(randX, randY);
+            starList.add(star);
+        }
     }
     
     private synchronized void startGame(){
@@ -76,7 +88,7 @@ public class GameCanvas extends Canvas implements Runnable{
             previousTime = currentTime;
             test++;
             
-            if(test%5000 == 0){
+            if(test%7000 == 0){
                 player1.fire();
                 player2.fire();
             }
@@ -132,10 +144,24 @@ public class GameCanvas extends Canvas implements Runnable{
 
     @Override
     public void paint(Graphics g){
-        
-        for(int i = 0; i <= bulletList.size() - 1; i++){
+        for(int i = 0; i < starList.size(); i++){
             try {
-                bulletList.get(i).draw(g);
+                starList.get(i).draw(g);
+            } catch (IOException ex) {
+                Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        for(int i = 0; i <= bulletList1.size() - 1; i++){
+            try {
+                bulletList1.get(i).draw(g);
+            } catch (IOException ex) {
+                Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        for(int i = 0; i <= bulletList2.size() - 1; i++){
+            try {
+                bulletList2.get(i).draw(g);
             } catch (IOException ex) {
                 Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -163,8 +189,14 @@ public class GameCanvas extends Canvas implements Runnable{
         if(!gameOver){
             player1.animate();
             player2.animate();
-            for(int i = 0; i <= bulletList.size() - 1; i++){
-                bulletList.get(i).animate();
+            for(int i = 0; i <= bulletList1.size() - 1; i++){
+                bulletList1.get(i).animate();
+            }
+            for(int i = 0; i <= bulletList2.size() - 1; i++){
+                bulletList2.get(i).animate();
+            }
+            for(int i = 0; i < starList.size(); i++){
+                //starList.get(i).animate();
             }
         }
     }
