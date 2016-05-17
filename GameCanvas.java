@@ -27,6 +27,7 @@ public class GameCanvas extends Canvas implements Runnable{
     private Thread gameThread;
     
     static GameCanvas spaceInvaders;
+    static SerialInput serialInput;
     
     public ArrayList<Bullet> bulletList1 = new ArrayList<>();
     public ArrayList<Bullet> bulletList2 = new ArrayList<>();
@@ -115,6 +116,10 @@ public class GameCanvas extends Canvas implements Runnable{
     public static void main(String args[]){
         JFrame frame = new JFrame();
         spaceInvaders = new GameCanvas();
+
+        serialInput = new SerialInput();
+        serialInput.initialize();
+        serialInput.portConnect();
         
         frame.setSize(800, 800);
         frame.setVisible(true);
