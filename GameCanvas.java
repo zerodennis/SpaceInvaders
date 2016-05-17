@@ -1,6 +1,7 @@
 
 import java.awt.*;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
@@ -27,6 +28,7 @@ public class GameCanvas extends Canvas implements Runnable{
     private Thread gameThread;
     
     static GameCanvas spaceInvaders;
+    static SerialInput serialInput;
     
     public ArrayList<Bullet> bulletList1 = new ArrayList<>();
     public ArrayList<Bullet> bulletList2 = new ArrayList<>();
@@ -133,19 +135,56 @@ public class GameCanvas extends Canvas implements Runnable{
             
             if(System.currentTimeMillis() - timer > 1000){
                 timer += 1000;
-                //System.out.println(updates + "FPS, " + frames);
+                //System.out.println(updates + "Game FPS, " + frames);
                 updates = 0;
                 frames = 0;
             }
         }
         stopGame();
     }
+
+    //Full Screen Mode
+    private static boolean isMacOSX() {
+        return System.getProperty("os.name").contains("Mac OS X");
+    }
+
+    public static void enableFullScreenMode(Window window) {
+        String className = "com.apple.eawt.FullScreenUtilities";
+        String methodName = "setWindowCanFullScreen";
+
+        try {
+            Class<?> clazz = Class.forName(className);
+            Method method = clazz.getMethod(methodName, Window.class, boolean.class);
+            method.invoke(null, window, true);
+        } catch (Throwable t) {
+            System.err.println("Full screen mode is not supported");
+            t.printStackTrace();
+        }
+    }
+    //Full Screen Mode
     
     public static void main(String args[]){
         JFrame frame = new JFrame();
         spaceInvaders = new GameCanvas();
-        
-        frame.setSize(800, 800);
+
+        serialInput = new SerialInput();
+        serialInput.initialize();
+        serialInput.portConnect();
+        serialInput.startSerial();
+
+        if (isMacOSX()) {
+            System.setProperty(
+                    "com.apple.mrj.application.apple.menu.about.name",
+                    "Full Screen Demo");
+            enableFullScreenMode(frame);
+        } else{
+            frame.setUndecorated(true);
+            //gameFrame.setSize(1280,720);
+            frame.setResizable(false);
+        }
+
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
         frame.setVisible(true);
         frame.add(spaceInvaders);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -153,6 +192,7 @@ public class GameCanvas extends Canvas implements Runnable{
         spaceInvaders.startGame();
     }
 
+    //Buffer Strategy
     public void update(Graphics g) {
         Graphics offgc;
         Image offscreen;
@@ -170,12 +210,13 @@ public class GameCanvas extends Canvas implements Runnable{
 
         g.drawImage(offscreen, 0, 0, this);
     }
+    //Buffer Strategy
 
     @Override
     public void paint(Graphics g){
-        for(int i = 0; i < starList.size(); i++){
+        for (Star aStarList : starList) {
             try {
-                starList.get(i).draw(g);
+                aStarList.draw(g);
             } catch (IOException ex) {
                 Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -233,9 +274,9 @@ public class GameCanvas extends Canvas implements Runnable{
             for(int i = 0; i <= bulletList2.size() - 1; i++){
                 bulletList2.get(i).animate();
             }
-            for(int i = 0; i < starList.size(); i++){
+            //for(int i = 0; i < starList.size(); i++){
                 //starList.get(i).animate();
-            }
+            //}
             for(int i = 0; i < powerUpList.size(); i++){
                 powerUpList.get(i).animate();
                 

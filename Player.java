@@ -29,8 +29,8 @@ public class Player {
     int xVelocity = 0;
     int yVelocity = 0;
     final int xSpeed = 1;
-    int maxXVelocity = 15;
-    int maxYVelocity = 15;
+    int maxXVelocity = 10;
+    int maxYVelocity = 10;
     
     boolean movingLeft = false;
     boolean movingRight = false;
