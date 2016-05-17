@@ -58,9 +58,9 @@ public class Bullet {
     
     public void animate(){
         if(direction.equals("Up")){
-            yPos -= 10;
+            yPos -= 6;
         }else{
-            yPos += 10;
+            yPos += 6;
         }
         
         if(playerHit == true || yPos > 800 || yPos < 0){

@@ -22,7 +22,7 @@ import javax.swing.WindowConstants;
 public class GameCanvas extends Canvas implements Runnable{
 
     Player player2 = new Player(0, 0, 50, 50, 2);
-    Player player1 = new Player(750, 730, 50, 50, 1);
+    Player player1 = new Player(750, 730, 50, 50, 1);    
     static boolean running = true;
     private Thread gameThread;
     
@@ -31,19 +31,27 @@ public class GameCanvas extends Canvas implements Runnable{
     public ArrayList<Bullet> bulletList1 = new ArrayList<>();
     public ArrayList<Bullet> bulletList2 = new ArrayList<>();
     public ArrayList<Star> starList = new ArrayList<>();
+    public ArrayList<Powerup> powerUpList = new ArrayList<>();
     boolean gameOver = false;
+    
+    Random randomPowerUp = new Random();
+    int randSpawn = randomPowerUp.nextInt(200000 - 100000 + 1) + 100000;
+    int randType = 1;
     
     public GameCanvas(){
         setBackground(Color.BLACK);
         setSize(1000, 1000);
         
         addKeyListener(new KeyEventHandler());
+        
         for(int i = 0; i < 15; i++){
             int xMin = 0, xMax = 780;
             int yMin = 0, yMax = 780;
+            
             Random random = new Random();
             int randX = random.nextInt(xMax - xMin + 1) + xMin;
             int randY = random.nextInt(yMax - yMin + 1) + yMin;
+            
             Star star = new Star(randX, randY);
             starList.add(star);
         }
@@ -88,9 +96,30 @@ public class GameCanvas extends Canvas implements Runnable{
             previousTime = currentTime;
             test++;
             
-            if(test%7000 == 0){
+            if(test%10000 == 0){
                 player1.fire();
                 player2.fire();
+            }
+            
+            if(test%randSpawn == 0){
+                if(powerUpList.size() < 1){
+                    randType = randomPowerUp.nextInt(2 - 1 + 1) + 1;
+                    Powerup powerup;
+                    
+                    int xMin = 0, xMax = 700;
+                    int yMin = 0, yMax = 700;
+            
+                    int randX = randomPowerUp.nextInt(xMax - xMin + 1) + xMin;
+                    int randY = randomPowerUp.nextInt(yMax - yMin + 1) + yMin;
+                            
+                    if(randType == 1){
+                        powerup = new Powerup(randX, randY, "multishot");
+                    } else{
+                        powerup = new Powerup(randX, randY, "shield");
+                    }
+                    powerUpList.add(powerup);
+                }
+                randSpawn = randomPowerUp.nextInt(200000 - 100000 + 1) + 100000;
             }
             
             if(timePassed >= 1){
@@ -152,6 +181,15 @@ public class GameCanvas extends Canvas implements Runnable{
             }
         }
         
+        for(int i = 0; i < powerUpList.size(); i++){
+            try {
+                powerUpList.get(i).draw(g);
+            } catch (IOException ex) {
+                Logger.getLogger(GameCanvas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
         for(int i = 0; i <= bulletList1.size() - 1; i++){
             try {
                 bulletList1.get(i).draw(g);
@@ -198,6 +236,12 @@ public class GameCanvas extends Canvas implements Runnable{
             for(int i = 0; i < starList.size(); i++){
                 //starList.get(i).animate();
             }
+            for(int i = 0; i < powerUpList.size(); i++){
+                powerUpList.get(i).animate();
+                
+            }
+            
+            //System.out.println(powerUpList.size());
         }
     }
 }
