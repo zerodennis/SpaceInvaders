@@ -1,43 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="541de300-4f3d-49c8-8dd8-d06f419f6a5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/RXTXcomm.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Bullet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/GameCanvas.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/KeyEventHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Life.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Player.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/SerialInput.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Star.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/lib/RXTXcomm.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/resources/Bullet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/resources/Life.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/resources/Spaceship.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/resources/Star.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/rxtxParallel.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/rxtxSerial.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rxtxParallel.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rxtxSerial.dll" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpaceInvaders.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/libraries/RXTXcomm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/SpaceInvaders.iml" />
+    <list default="true" id="541de300-4f3d-49c8-8dd8-d06f419f6a5c" name="Default" comment="Fullscreen feature is fully functional (Support for 720p to 4k)">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/Bullet.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Bullet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/GameCanvas.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/GameCanvas.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/Player.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bullet.java" afterPath="$PROJECT_DIR$/Bullet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameCanvas.java" afterPath="$PROJECT_DIR$/GameCanvas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player.java" afterPath="$PROJECT_DIR$/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/workspace.xml" />
     </list>
     <ignored path="SpaceInvaders.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,10 +34,12 @@
       <file leaf-file-name="GameCanvas.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2310231">
-              <caret line="24" column="28" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="28" />
+            <state vertical-scroll-proportion="-1.7112211">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5010#5011#0" expanded="true" />
+                <element signature="e#5083#5084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -85,8 +59,10 @@
         <entry file="file://$PROJECT_DIR$/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-              <folding />
+              <caret line="234" column="69" selection-start-line="234" selection-start-column="69" selection-end-line="234" selection-end-column="69" />
+              <folding>
+                <element signature="e#1100#1106#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/SerialInput.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -124,9 +100,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/Bullet.java" />
         <option value="$PROJECT_DIR$/SerialInput.java" />
+        <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/GameCanvas.java" />
       </list>
     </option>
@@ -162,8 +138,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,7 +161,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,6 +170,122 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Bullet.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/GameCanvas.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Player.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Powerup.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Multishot.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Overshield.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Shield.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.GameCanvas">
     <configuration default="false" name="GameCanvas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -505,7 +597,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463481038273</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added library files">
+      <created>1463488511103</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1463488511103</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -520,7 +618,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30441642" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -551,7 +649,9 @@
     <MESSAGE value="Added buffer strategy" />
     <MESSAGE value="Added tilt sensor serial reading feature" />
     <MESSAGE value="Fully working tilt controls + partial fullscreen support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fully working tilt controls + partial fullscreen support" />
+    <MESSAGE value="Added library files" />
+    <MESSAGE value="Fullscreen feature is fully functional (Support for 720p to 4k)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fullscreen feature is fully functional (Support for 720p to 4k)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -562,6 +662,47 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GameCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="263" column="4" selection-start-line="263" selection-start-column="4" selection-end-line="263" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5083#5084#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1100#1106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SerialInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -576,6 +717,8 @@
           <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -611,7 +754,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#1100#1106#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -629,6 +774,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -653,7 +800,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="41" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="e#1100#1106#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,6 +820,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -695,7 +846,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="41" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="e#1100#1106#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -722,10 +875,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Player.java">
+    <entry file="file://$PROJECT_DIR$/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -733,7 +886,7 @@
     <entry file="file://$PROJECT_DIR$/SerialInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -741,20 +894,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bullet.java">
+    <entry file="file://$PROJECT_DIR$/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
-          <folding />
+          <caret line="234" column="69" selection-start-line="234" selection-start-column="69" selection-end-line="234" selection-end-column="69" />
+          <folding>
+            <element signature="e#1100#1106#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GameCanvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2310231">
-          <caret line="24" column="28" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="28" />
+        <state vertical-scroll-proportion="-1.7112211">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>

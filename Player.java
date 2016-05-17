@@ -25,12 +25,15 @@ public class Player {
     int width;
     int height;
     int playerNum;
+    int xBorder;
+    int yBorder;
+    int scaling;
     
     int xVelocity = 0;
     int yVelocity = 0;
     final int xSpeed = 1;
-    int maxXVelocity = 10;
-    int maxYVelocity = 10;
+    int maxXVelocity = 8;
+    int maxYVelocity = 8;
     
     boolean movingLeft = false;
     boolean movingRight = false;
@@ -46,13 +49,16 @@ public class Player {
     
     ArrayList<Life> lifeList = new ArrayList<Life>();
     
-    public Player(int x, int y, int w, int h, int num){
+    public Player(int x, int y, int w, int h, int num, int xB, int yB, int sc){
         xPos = x;
         yPos = y;
         width = w;
         height = h;
         playerNum = num;
-        
+        xBorder = xB;
+        yBorder = yB;
+        scaling = sc;
+
         lifeList.add(new Life());
         lifeList.add(new Life());
         lifeList.add(new Life());
@@ -78,20 +84,19 @@ public class Player {
             AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
             img = op.filter(img, null);
             
-            g.drawImage(img, xPos, yPos, width, height, null);
+            g.drawImage(img, xPos - width, yPos - height, width, height, null);
         }
-        
-        
+
+        int lifeDimensions = 50 * scaling;
         if(playerNum == 1){
-            int x = -5;
+            int x = (xBorder -5)*scaling;
             for(int i = 0; i < lifeList.size(); i++){
-                
-                lifeList.get(i).draw(g, x + (i*50), 730);
+                lifeList.get(i).draw(g, x + (i*lifeDimensions), (yBorder + (720 - lifeDimensions))*scaling);
             }
         } else{
-            int x = 640;
+            int x = (xBorder + 1280 - (lifeDimensions*3))*scaling;
             for(int i = 0; i < lifeList.size(); i++){
-                lifeList.get(i).draw(g, x + (i*50), 0);
+                lifeList.get(i).draw(g, x + (i*lifeDimensions), (yBorder)*scaling);
             }
         }
         
@@ -117,8 +122,8 @@ public class Player {
                 xVelocity = maxXVelocity;
             }
             
-            if(xPos <= 0){
-                xPos = 0;
+            if(xPos <= (xBorder + width)*scaling){
+                xPos = (xBorder + width)*scaling;
             }
         } else if (movingRight) {
             xPos += xVelocity;
@@ -128,8 +133,8 @@ public class Player {
                 xVelocity = maxXVelocity;
             }
             
-            if(xPos >= 750){
-                xPos = 750;
+            if(xPos >= (xBorder+1280 - width)*scaling){
+                xPos = (xBorder+1280 - width)*scaling;
             }
         } else if(movingUp){
             yPos -= xVelocity;
@@ -139,8 +144,8 @@ public class Player {
                 xVelocity = maxXVelocity;
             }
             
-            if(yPos <= 0){
-                yPos = 0;
+            if(yPos <= (yBorder + height)*scaling){
+                yPos = (yBorder = height)*scaling;
             }
         } else if(movingDown){
             yPos += xVelocity;
@@ -150,8 +155,8 @@ public class Player {
                 xVelocity = maxXVelocity;
             }
             
-            if(yPos >= 730){
-                yPos = 730;
+            if(yPos >= (yBorder+720 - height)*scaling){
+                yPos = (yBorder+720 - height)*scaling;
             }
         }
         
@@ -201,7 +206,7 @@ public class Player {
         } else{
             Bullet bullet;
             if(playerNum == 1){
-                bullet = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up");
+                bullet = new Bullet(xPos + (width/2 - 3) - width, yPos - 14, 7, 14, "Up");
                 GameCanvas.spaceInvaders.bulletList1.add(bullet);
             }else{
                 bullet = new Bullet(xPos + (width/2 - 3), yPos + height + 14, 7, 14, "Down");

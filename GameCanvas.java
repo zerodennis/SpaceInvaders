@@ -21,9 +21,9 @@ import javax.swing.WindowConstants;
  * @author fielfaustino
  */
 public class GameCanvas extends Canvas implements Runnable{
-
-    Player player2 = new Player(0, 0, 50, 50, 2);
-    Player player1 = new Player(750, 730, 50, 50, 1);    
+    
+    Player player2;
+    Player player1;
     static boolean running = true;
     private Thread gameThread;
     
@@ -35,21 +35,36 @@ public class GameCanvas extends Canvas implements Runnable{
     public ArrayList<Star> starList = new ArrayList<>();
     public ArrayList<Powerup> powerUpList = new ArrayList<>();
     boolean gameOver = false;
+
+    int xResolution;
+    int yResolution;
+    int scaling;
+    int xBorder;
+    int yBorder;
     
     Random randomPowerUp = new Random();
     int randSpawn = randomPowerUp.nextInt(200000 - 100000 + 1) + 100000;
     int randType = 1;
     
     public GameCanvas(){
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double screenWidth = screenSize.getWidth();
+        double screenHeight = screenSize.getHeight();
+
+        xResolution = (int) screenWidth;
+        yResolution = (int) screenHeight;
+        setScaling();
+        setBorders();
+
+        int playerDimensions = 50 * scaling;
+        player2 = new Player((xBorder)*scaling, (yBorder)*scaling, playerDimensions, playerDimensions, 2, xBorder, yBorder, scaling);
+        player1 = new Player((xBorder + 1280)*scaling, (yBorder + (720 - playerDimensions))*scaling, playerDimensions, playerDimensions, 1, xBorder, yBorder, scaling);
+
         setBackground(Color.BLACK);
-        setSize(1000, 1000);
-        
-        addKeyListener(new KeyEventHandler());
-        
+
         for(int i = 0; i < 15; i++){
-            int xMin = 0, xMax = 780;
-            int yMin = 0, yMax = 780;
-            
+            int xMin = xBorder, xMax = (xBorder + 1280)*scaling;
+            int yMin = yBorder, yMax = (yBorder + 720)*scaling;
             Random random = new Random();
             int randX = random.nextInt(xMax - xMin + 1) + xMin;
             int randY = random.nextInt(yMax - yMin + 1) + yMin;
@@ -162,6 +177,25 @@ public class GameCanvas extends Canvas implements Runnable{
         }
     }
     //Full Screen Mode
+
+    //Set Scaling and Border
+    private void setScaling(){
+        if(xResolution >= 3840 && yResolution >= 2160){
+            scaling = 3;
+        }
+        else if(xResolution >= 2560 && yResolution >= 1600){
+            scaling = 2;
+        }
+        else{
+            scaling = 1;
+        }
+    }
+
+    private void setBorders(){
+        xBorder = (xResolution - (1280*scaling)) / 2;
+        yBorder = (yResolution - (720*scaling)) / 2;
+    }
+    //Set Scaling and Border
     
     public static void main(String args[]){
         JFrame frame = new JFrame();
@@ -262,9 +296,9 @@ public class GameCanvas extends Canvas implements Runnable{
             g.setColor(Color.WHITE);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 70)); 
             if(player1.alive){
-                g.drawString("Player 1 Wins!", 200, 400);
+                g.drawString("Player 1 Wins!", (xBorder + 200)*scaling, (yBorder + 400)*scaling);
             }else{
-                g.drawString("Player 2 Wins!", 200, 400);
+                g.drawString("Player 2 Wins!", (xBorder + 200)*scaling, (yBorder + 400)*scaling);
             }
         }
     }

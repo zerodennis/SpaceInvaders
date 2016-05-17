@@ -71,12 +71,4 @@ public class Bullet {
             }
         }
     }
-    
-    public void playerCollision(){
-        Rectangle player = GameCanvas.spaceInvaders.player1.getBounds();
-        
-        if(player.intersects(getBounds())){
-            //nothing
-        }
-    }
 }
