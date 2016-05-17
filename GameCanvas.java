@@ -166,11 +166,16 @@ public class GameCanvas extends Canvas implements Runnable{
     public static void main(String args[]){
         JFrame frame = new JFrame();
         spaceInvaders = new GameCanvas();
-
         serialInput = new SerialInput();
-        serialInput.initialize();
-        serialInput.portConnect();
-        serialInput.startSerial();
+        
+        try{
+            serialInput.initialize();
+            serialInput.portConnect();
+            serialInput.startSerial();
+        } catch(Throwable t){
+            System.err.println("Serial input cannot be initialized");
+            t.printStackTrace();
+        }
 
         if (isMacOSX()) {
             System.setProperty(
