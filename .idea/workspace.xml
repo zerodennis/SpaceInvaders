@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SpaceInvaders:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="541de300-4f3d-49c8-8dd8-d06f419f6a5c" name="Default" comment="Fullscreen feature is fully functional (Support for 720p to 4k)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SpaceInvaders_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GameClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GameServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/Bullet.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Bullet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/GameCanvas.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/GameCanvas.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/Player.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/SerialInput.class" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/SerialInput.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bullet.java" afterPath="$PROJECT_DIR$/Bullet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameCanvas.java" afterPath="$PROJECT_DIR$/GameCanvas.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player.java" afterPath="$PROJECT_DIR$/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SerialInput.java" afterPath="$PROJECT_DIR$/SerialInput.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/SpaceInvaders/.idea/workspace.xml" />
     </list>
     <ignored path="SpaceInvaders.iws" />
@@ -34,12 +44,10 @@
       <file leaf-file-name="GameCanvas.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7112211">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.50165015">
+              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5010#5011#0" expanded="true" />
-                <element signature="e#5083#5084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,10 +67,8 @@
         <entry file="file://$PROJECT_DIR$/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="234" column="69" selection-start-line="234" selection-start-column="69" selection-end-line="234" selection-end-column="69" />
-              <folding>
-                <element signature="e#1100#1106#0" expanded="true" />
-              </folding>
+              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,9 +77,33 @@
         <entry file="file://$PROJECT_DIR$/SerialInput.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+              <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GameServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GameClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -101,9 +131,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Bullet.java" />
-        <option value="$PROJECT_DIR$/SerialInput.java" />
         <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/GameCanvas.java" />
+        <option value="$PROJECT_DIR$/SerialInput.java" />
+        <option value="$PROJECT_DIR$/GameServer.java" />
+        <option value="$PROJECT_DIR$/GameClient.java" />
       </list>
     </option>
   </component>
@@ -164,12 +196,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../School/Freshman Year/CS 2nd Sem/Java Codes/Project2-Faustion-Suba" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -603,7 +635,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463488511103</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fullscreen feature is fully functional (Support for 720p to 4k)">
+      <created>1463497874617</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1463497874617</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -668,8 +706,6 @@
           <caret line="263" column="4" selection-start-line="263" selection-start-column="4" selection-end-line="263" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5010#5011#0" expanded="true" />
-            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,9 +722,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1100#1106#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -717,8 +751,6 @@
           <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5010#5011#0" expanded="true" />
-            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -754,9 +786,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
-          <folding>
-            <element signature="e#1100#1106#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -774,8 +804,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5010#5011#0" expanded="true" />
-            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -800,9 +828,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="41" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
-          <folding>
-            <element signature="e#1100#1106#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,8 +846,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5010#5011#0" expanded="true" />
-            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -846,9 +870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="41" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
-          <folding>
-            <element signature="e#1100#1106#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -878,7 +900,15 @@
     <entry file="file://$PROJECT_DIR$/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -886,7 +916,7 @@
     <entry file="file://$PROJECT_DIR$/SerialInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -894,24 +924,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Player.java">
+    <entry file="file://$PROJECT_DIR$/GameServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="234" column="69" selection-start-line="234" selection-start-column="69" selection-end-line="234" selection-end-column="69" />
+          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
           <folding>
-            <element signature="e#1100#1106#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GameCanvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7112211">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.50165015">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5010#5011#0" expanded="true" />
-            <element signature="e#5083#5084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,10 +960,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>SpaceInvaders:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

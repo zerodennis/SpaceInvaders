@@ -47,7 +47,7 @@ public class Player {
     int counter;
     BufferedImage shield;
     
-    ArrayList<Life> lifeList = new ArrayList<Life>();
+    ArrayList<Life> lifeList = new ArrayList<>();
     
     public Player(int x, int y, int w, int h, int num, int xB, int yB, int sc){
         xPos = x;
@@ -84,7 +84,7 @@ public class Player {
             AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
             img = op.filter(img, null);
             
-            g.drawImage(img, xPos - width, yPos - height, width, height, null);
+            g.drawImage(img, xPos, yPos, width, height, null);
         }
 
         int lifeDimensions = 50 * scaling;
@@ -206,7 +206,7 @@ public class Player {
         } else{
             Bullet bullet;
             if(playerNum == 1){
-                bullet = new Bullet(xPos + (width/2 - 3) - width, yPos - 14, 7, 14, "Up");
+                bullet = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up");
                 GameCanvas.spaceInvaders.bulletList1.add(bullet);
             }else{
                 bullet = new Bullet(xPos + (width/2 - 3), yPos + height + 14, 7, 14, "Down");
@@ -279,5 +279,13 @@ public class Player {
             }
         }
         
+    }
+
+    public void update(int xP, int yP, boolean im, boolean mShot, int nLives){
+        xPos = xP;
+        yPos = yP;
+        immune = im;
+        multishot = mShot;
+        life = nLives;
     }
 }

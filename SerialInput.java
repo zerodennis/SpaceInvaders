@@ -22,7 +22,6 @@ public class SerialInput implements SerialPortEventListener, Runnable{
     private static final int BAUD_RATE = 9600; //baud rate to 9600bps
     private BufferedReader input;               //declaring my input buffer
     private OutputStream output;                //declaring output stream
-    private String name;        //user input name string
 
     private boolean running = true;
     Thread serialThread;
@@ -45,7 +44,7 @@ public class SerialInput implements SerialPortEventListener, Runnable{
         //if serial port am looking for is not found
         if (portId == null) {
             System.out.println("COM port not found");
-            System.exit(1);
+            //System.exit(1);
         }
 
     }
@@ -68,7 +67,7 @@ public class SerialInput implements SerialPortEventListener, Runnable{
 
         } catch (PortInUseException e) {
             System.out.println("Port already in use");
-            System.exit(1);
+            //System.exit(1);
         } catch (NullPointerException e2) {
             System.out.println("COM port maybe disconnected");
         } catch (UnsupportedCommOperationException e3) {

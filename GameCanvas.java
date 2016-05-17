@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -29,6 +28,8 @@ public class GameCanvas extends Canvas implements Runnable{
     
     static GameCanvas spaceInvaders;
     static SerialInput serialInput;
+    static GameServer gameServer;
+    static GameClient gameClient;
     
     public ArrayList<Bullet> bulletList1 = new ArrayList<>();
     public ArrayList<Bullet> bulletList2 = new ArrayList<>();
@@ -36,11 +37,11 @@ public class GameCanvas extends Canvas implements Runnable{
     public ArrayList<Powerup> powerUpList = new ArrayList<>();
     boolean gameOver = false;
 
-    int xResolution;
-    int yResolution;
-    int scaling;
-    int xBorder;
-    int yBorder;
+    static int xResolution;
+    static int yResolution;
+    static int scaling;
+    static int xBorder;
+    static int yBorder;
     
     Random randomPowerUp = new Random();
     int randSpawn = randomPowerUp.nextInt(200000 - 100000 + 1) + 100000;
@@ -56,9 +57,18 @@ public class GameCanvas extends Canvas implements Runnable{
         setScaling();
         setBorders();
 
+        Object[] startOptions = {"Host", "Join"};
+        int option = JOptionPane.showOptionDialog(this, "Start a New Game", null,
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,null, startOptions,null);
+        if(option == 0){
+            startServer();
+        }else {
+            startClient();
+        }
+
         int playerDimensions = 50 * scaling;
         player2 = new Player((xBorder)*scaling, (yBorder)*scaling, playerDimensions, playerDimensions, 2, xBorder, yBorder, scaling);
-        player1 = new Player((xBorder + 1280)*scaling, (yBorder + (720 - playerDimensions))*scaling, playerDimensions, playerDimensions, 1, xBorder, yBorder, scaling);
+        player1 = new Player((xBorder + 1280 - playerDimensions)*scaling, (yBorder + (720 - playerDimensions))*scaling, playerDimensions, playerDimensions, 1, xBorder, yBorder, scaling);
 
         setBackground(Color.BLACK);
 
@@ -196,6 +206,20 @@ public class GameCanvas extends Canvas implements Runnable{
         yBorder = (yResolution - (720*scaling)) / 2;
     }
     //Set Scaling and Border
+
+    //Networking
+    public static void startServer(){
+        gameServer = new GameServer();
+        gameServer.start();
+        //serverRunning = true;
+    }
+
+    public static void startClient(){
+        gameClient = new GameClient();
+        gameClient.start();
+        //clientRunning = true;
+    }
+    //Networking
     
     public static void main(String args[]){
         JFrame frame = new JFrame();
