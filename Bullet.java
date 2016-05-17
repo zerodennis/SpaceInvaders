@@ -63,7 +63,7 @@ public class Bullet {
             yPos += 10;
         }
         
-        if(playerHit == true || yPos > 800 || yPos < 0){
+        if(playerHit || yPos > 800 || yPos < 0){
             if(direction.equals("Up")){
                 GameCanvas.spaceInvaders.bulletList1.remove(this);
             } else{

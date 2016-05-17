@@ -1,3 +1,8 @@
+/**
+ * Created by Anton Suba on 5/17/2016.
+ *
+ */
+
 import java.io.BufferedReader;                    //BufferedReader makes reading operation efficient
 import java.io.InputStreamReader;         //InputStreamReader decodes a stream of bytes into a character set
 import java.io.OutputStream;          //writes stream of bytes into serial port
@@ -8,14 +13,9 @@ import gnu.io.SerialPortEventListener; //listens to the a possible event on seri
 import java.util.Enumeration;
 import gnu.io.PortInUseException;           //all the exceptions.Never mind them for now
 import gnu.io.UnsupportedCommOperationException;
-import java.util.Scanner;
 
-/**
- * Created by Anton Suba on 5/17/2016.
- *
- */
+public class SerialInput implements SerialPortEventListener, Runnable{
 
-public class SerialInput implements SerialPortEventListener{
     private SerialPort serialPort;         //defining serial port object
     private CommPortIdentifier portId = null;       //my COM port
     private static final int TIME_OUT = 2000;    //time in milliseconds
@@ -23,7 +23,9 @@ public class SerialInput implements SerialPortEventListener{
     private BufferedReader input;               //declaring my input buffer
     private OutputStream output;                //declaring output stream
     private String name;        //user input name string
-    Scanner inputName;          //user input name
+
+    private boolean running = true;
+    Thread serialThread;
 
     //method initialize
     public void initialize() {
@@ -96,7 +98,34 @@ public class SerialInput implements SerialPortEventListener{
         if (evt.getEventType() == SerialPortEvent.DATA_AVAILABLE) { //if data available on serial port
             try {
                 String inputLine = input.readLine();
-                System.out.println(inputLine);
+                //System.out.println(inputLine);
+                switch (inputLine) {
+                    case "left":
+                        GameCanvas.spaceInvaders.player1.movingLeft = true;
+                        GameCanvas.spaceInvaders.player1.movingRight = false;
+                        GameCanvas.spaceInvaders.player1.movingUp = false;
+                        GameCanvas.spaceInvaders.player1.movingDown = false;
+                        break;
+                    case "right":
+                        GameCanvas.spaceInvaders.player1.movingLeft = false;
+                        GameCanvas.spaceInvaders.player1.movingRight = true;
+                        GameCanvas.spaceInvaders.player1.movingUp = false;
+                        GameCanvas.spaceInvaders.player1.movingDown = false;
+                        break;
+                    case "up":
+                        GameCanvas.spaceInvaders.player1.movingLeft = false;
+                        GameCanvas.spaceInvaders.player1.movingRight = false;
+                        GameCanvas.spaceInvaders.player1.movingUp = true;
+                        GameCanvas.spaceInvaders.player1.movingDown = false;
+                        break;
+                    case "down":
+                        GameCanvas.spaceInvaders.player1.movingLeft = false;
+                        GameCanvas.spaceInvaders.player1.movingRight = false;
+                        GameCanvas.spaceInvaders.player1.movingUp = false;
+                        GameCanvas.spaceInvaders.player1.movingDown = true;
+                        break;
+                }
+
             } catch (Exception e) {
                 System.err.println(e.toString());
             }
@@ -112,5 +141,54 @@ public class SerialInput implements SerialPortEventListener{
         }
         input = null;        //close input and output streams
         output = null;
+    }
+
+    public synchronized void startSerial(){
+        running = true;
+        serialThread = new Thread();
+        serialThread.start();
+    }
+
+    public synchronized void stopSerial(){
+        if(!running){
+            return;
+        }
+        running = false;
+        try {
+            serialThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void run() {
+        long previousTime = System.nanoTime();
+        final double limitFPS = 120.0;
+        double divider = 1000000000 / limitFPS;
+        double timePassed = 0;
+        int frames = 0;
+        int updates = 0;
+        long timer = System.currentTimeMillis();
+
+        while(running){
+            long currentTime = System.nanoTime();
+            timePassed += (currentTime - previousTime) / divider;
+            previousTime = currentTime;
+
+            if(timePassed >= 1){
+                timePassed--;
+                updates++;
+            }
+            frames++;
+
+            if(System.currentTimeMillis() - timer > 1000){
+                timer += 1000;
+                //System.out.println(updates + "Serial FPS, " + frames);
+                updates = 0;
+                frames = 0;
+            }
+        }
+        stopSerial();
     }
 }
