@@ -133,16 +133,16 @@ public class GameCanvas extends Canvas implements Runnable{
                     randType = randomPowerUp.nextInt(2 - 1 + 1) + 1;
                     Powerup powerup;
                     
-                    int xMin = 0, xMax = 700;
-                    int yMin = 0, yMax = 700;
+                    int xMin = (xBorder)*scaling, xMax = (xBorder + 1250)*scaling;
+                    int yMin = (yBorder)*scaling, yMax = (yBorder + 690)*scaling;
             
                     int randX = randomPowerUp.nextInt(xMax - xMin + 1) + xMin;
                     int randY = randomPowerUp.nextInt(yMax - yMin + 1) + yMin;
                             
                     if(randType == 1){
-                        powerup = new Powerup(randX, randY, "multishot");
+                        powerup = new Powerup(randX, randY, "multishot", scaling);
                     } else{
-                        powerup = new Powerup(randX, randY, "shield");
+                        powerup = new Powerup(randX, randY, "shield", scaling);
                     }
                     powerUpList.add(powerup);
                 }
@@ -320,9 +320,9 @@ public class GameCanvas extends Canvas implements Runnable{
             g.setColor(Color.WHITE);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 70)); 
             if(player1.alive){
-                g.drawString("Player 1 Wins!", (xBorder + 200)*scaling, (yBorder + 400)*scaling);
+                g.drawString("Player 1 Wins!", (xBorder + 440)*scaling, (yBorder + 320)*scaling);
             }else{
-                g.drawString("Player 2 Wins!", (xBorder + 200)*scaling, (yBorder + 400)*scaling);
+                g.drawString("Player 2 Wins!", (xBorder + 440)*scaling, (yBorder + 320)*scaling);
             }
         }
     }
@@ -342,7 +342,7 @@ public class GameCanvas extends Canvas implements Runnable{
             //}
             for(int i = 0; i < powerUpList.size(); i++){
                 powerUpList.get(i).animate();
-                
+
             }
             
             //System.out.println(powerUpList.size());

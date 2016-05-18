@@ -20,14 +20,20 @@ public class Powerup {
     String powerUpName;
     int xPos, yPos;
     BufferedImage img;
-    
+
+    int scaling;
+    int powerUpDimension;
+
     int counter = 0;
     boolean active = true;
     
-    public Powerup(int x, int y, String name){
+    public Powerup(int x, int y, String name, int sc){
         xPos = x;
         yPos = y;
         powerUpName = name;
+        scaling = sc;
+
+        powerUpDimension = 30 * scaling;
     }
     
     public void draw(Graphics g) throws IOException{
@@ -41,7 +47,7 @@ public class Powerup {
             e.printStackTrace();
         }
         
-        g.drawImage(img, xPos, yPos, 30, 30, null);
+        g.drawImage(img, xPos, yPos, powerUpDimension, powerUpDimension, null);
     }
     
     public void animate(){
@@ -58,7 +64,7 @@ public class Powerup {
         }
     }
     
-    public Rectangle getBounds(){ return new Rectangle(xPos, yPos, 30, 30); }
+    public Rectangle getBounds(){ return new Rectangle(xPos, yPos, powerUpDimension, powerUpDimension); }
     
     public String getName(){
         return powerUpName;

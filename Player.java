@@ -105,7 +105,7 @@ public class Player {
             float opacity = 0.5f;
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
             
-            g.drawImage(shield, xPos - 5, yPos - 5, 60, 60, null);
+            g.drawImage(shield, xPos - (5*scaling), yPos - (5*scaling), 60*scaling, 60*scaling, null);
         }
         
         //g.drawRect(xPos, yPos, width, height);
@@ -122,8 +122,8 @@ public class Player {
                 xVelocity = maxXVelocity;
             }
             
-            if(xPos <= (xBorder + width)*scaling){
-                xPos = (xBorder + width)*scaling;
+            if(xPos <= (xBorder)*scaling){
+                xPos = (xBorder)*scaling;
             }
         } else if (movingRight) {
             xPos += xVelocity;
@@ -144,8 +144,8 @@ public class Player {
                 xVelocity = maxXVelocity;
             }
             
-            if(yPos <= (yBorder + height)*scaling){
-                yPos = (yBorder = height)*scaling;
+            if(yPos <= (yBorder)*scaling){
+                yPos = (yBorder)*scaling;
             }
         } else if(movingDown){
             yPos += xVelocity;
