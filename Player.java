@@ -187,17 +187,17 @@ public class Player {
             Bullet bullet1, bullet2, bullet3;
             
             if(playerNum == 1){
-                bullet1 = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up");
-                bullet2 = new Bullet(xPos, yPos - 14, 7, 14, "Up");
-                bullet3 = new Bullet((xPos + width) - 7, yPos - 14, 7, 14, "Up");
+                bullet1 = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up", yBorder, scaling);
+                bullet2 = new Bullet(xPos, yPos - 14, 7, 14, "Up", yBorder, scaling);
+                bullet3 = new Bullet((xPos + width) - 7, yPos - 14, 7, 14, "Up", yBorder, scaling);
                 
                 GameCanvas.spaceInvaders.bulletList1.add(bullet1);
                 GameCanvas.spaceInvaders.bulletList1.add(bullet2);
                 GameCanvas.spaceInvaders.bulletList1.add(bullet3);
             }else{
-                bullet1 = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Down");
-                bullet2 = new Bullet(xPos, yPos - 14, 7, 14, "Down");
-                bullet3 = new Bullet((xPos + width) - 7, yPos - 14, 7, 14, "Down");
+                bullet1 = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Down", yBorder, scaling);
+                bullet2 = new Bullet(xPos, yPos - 14, 7, 14, "Down", yBorder, scaling);
+                bullet3 = new Bullet((xPos + width) - 7, yPos - 14, 7, 14, "Down", yBorder, scaling);
                 
                 GameCanvas.spaceInvaders.bulletList2.add(bullet1);
                 GameCanvas.spaceInvaders.bulletList2.add(bullet2);
@@ -206,10 +206,10 @@ public class Player {
         } else{
             Bullet bullet;
             if(playerNum == 1){
-                bullet = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up");
+                bullet = new Bullet(xPos + (width/2 - 3), yPos - 14, 7, 14, "Up", yBorder, scaling);
                 GameCanvas.spaceInvaders.bulletList1.add(bullet);
             }else{
-                bullet = new Bullet(xPos + (width/2 - 3), yPos + height + 14, 7, 14, "Down");
+                bullet = new Bullet(xPos + (width/2 - 3), yPos + height + 14, 7, 14, "Down", yBorder, scaling);
                 GameCanvas.spaceInvaders.bulletList2.add(bullet);
             }
         }

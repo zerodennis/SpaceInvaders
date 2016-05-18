@@ -20,16 +20,18 @@ import javax.imageio.ImageIO;
  */
 public class Bullet {
     BufferedImage img;
-    int xPos, yPos, width, height;
+    int xPos, yPos, width, height, yBorder, scaling;
     String direction;
     boolean playerHit = false;
     
-    public Bullet(int x, int y, int w, int h, String d){
+    public Bullet(int x, int y, int w, int h, String d, int yB, int sc){
         xPos = x;
         yPos = y;
         width = w;
         height = h;
         direction = d;
+        yBorder = yB;
+        scaling = sc;
     }
     
     public Rectangle getBounds(){ return new Rectangle(xPos, yPos, width , height);}
@@ -63,7 +65,7 @@ public class Bullet {
             yPos += 6;
         }
         
-        if(playerHit || yPos > 800 || yPos < 0){
+        if(playerHit || yPos > (yBorder + 800)*scaling || yPos < yBorder*scaling){
             if(direction.equals("Up")){
                 GameCanvas.spaceInvaders.bulletList1.remove(this);
             } else{
