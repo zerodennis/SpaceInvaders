@@ -36,6 +36,9 @@ public class Powerup {
         powerUpDimension = 30 * scaling;
     }
     
+    System.out.println("Gusto ko ng tsh1rt :3"); 
+    System.out.println("#DENNISVILLAMOR2016");
+    
     public void draw(Graphics g) throws IOException{
         try{
             if(powerUpName.equals("shield")){
